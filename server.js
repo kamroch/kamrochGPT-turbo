@@ -1,10 +1,10 @@
-import express, { json } from 'express'
-import cors from 'cors'
 const PORT = 8000
+const express = require('express')
+const cors = require('cors')
 require('dotenv').config()
 const app = express()
-app.use(json())
-app.use(cors())
+app.use(express.json())
+app.use(cors()) 
 const API_KEY = process.env.REACT_APP_API_KEY
 
 app.post('/completions',async (req, res) => {
