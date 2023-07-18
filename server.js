@@ -1,9 +1,12 @@
 const PORT = 8000
-import express, { json } from 'express'
-import cors from 'cors'
+
+import express from 'express';
+
+
+const cors = require('cors')
 require('dotenv').config()
 const app = express()
-app.use(json())
+app.use(express.json())
 app.use(cors()) 
 const API_KEY = process.env.REACT_APP_API_KEY
 
